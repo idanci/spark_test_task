@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2019_11_09_231143) do
   end
 
   create_table "product_uploads", force: :cascade do |t|
-    t.integer "created_by"
+    t.string "status", default: "pending", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
