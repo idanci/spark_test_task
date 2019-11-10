@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.0.1'
 gem 'pg'
 gem 'puma'
 gem 'sass-rails'
@@ -13,10 +13,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 gem 'jbuilder', '~> 2.5'
 
-gem 'spree', '~> 3.7.0'
-gem 'spree_auth_devise', '~> 3.5'
-gem 'spree_gateway', '~> 3.4'
-
+gem 'spree', '~> 4.0'
+gem 'spree_auth_devise', '~> 4.0'
+gem 'spree_gateway', '~> 3.6'
+gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
 gem 'sidekiq'
 
 group :development, :test do
