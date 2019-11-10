@@ -3,6 +3,8 @@ Spree::Admin::ProductsController.class_eval do
     product_upload = ProductUpload.create!(created_by: current_spree_user.id)
     product_upload.csv_file.attach(params[:file])
 
+    ProductsImportJob.perform_later(product_upload.id)
+
     redirect_to admin_products_path
   end
 
