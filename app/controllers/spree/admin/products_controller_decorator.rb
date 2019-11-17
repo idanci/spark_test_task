@@ -3,10 +3,9 @@ Spree::Admin::ProductsController.class_eval do
     product_upload = ProductUpload.create!
     product_upload.csv_file.attach(params[:file])
 
-    # ProductsImportJob.perform_later(product_upload.id)
-    ProductsImportJob.perform_now(product_upload.id)
+    ProductsImportJob.perform_later(product_upload.id)
 
-    redirect_to admin_products_path
+    redirect_to admin_products_path, notice: 'Imported products will be available soon.'
   end
 
   def import

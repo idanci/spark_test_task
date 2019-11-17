@@ -2,9 +2,6 @@ class ProductsImportJob < ApplicationJob
   queue_as :default
 
   def perform(product_upload_id)
-    upload = ProductUpload.find_by(id: product_upload_id)
-    return unless upload&.csv_file&.attached?
-
-    # parse & save
+    Importers::ProductsImporter.new(product_upload_id).run
   end
 end

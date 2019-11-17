@@ -31,6 +31,8 @@ module SparkTestTask
       end
     end
 
+    config.autoload_paths += %W( lib/ )
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
