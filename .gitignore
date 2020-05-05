@@ -17,5 +17,7 @@
 /node_modules
 /yarn-error.log
 
+/storage/*
+
 .byebug_history
 .idea
